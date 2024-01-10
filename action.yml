@@ -24,4 +24,4 @@ outputs:
     description: "The status code returned by the Sendgrid API"
 runs: 
   using: "node20"
-  main: "index.js"
+  main: "dist/index.js"
