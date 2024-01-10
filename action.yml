@@ -18,7 +18,7 @@ inputs:
     required: false
   sendgrid_api_key:
     description: "The Sendgrid API key, may also be passed via env: SENDGRID_API_KEY"
-    required: true
+    required: false
 outputs:
   status:
     description: "The status code returned by the Sendgrid API"
