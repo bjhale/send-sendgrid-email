@@ -15,7 +15,9 @@ Send an email using Sendgrid
 | subject | The subject of the email | `true` |  |
 | body_text | The body of the email in text format | `false` |  |
 | body_html | The body of the email in HTML format | `false` |  |
-| sendgrid_api_key | The Sendgrid API key, may also be passed via env: SENDGRID_API_KEY | `true` |  |
+| attachment | A file path to attach to the email | `false` |  |
+| attachments | A YAML list/JSON array of file paths to attach to the email | `false` |  |
+| sendgrid_api_key | The Sendgrid API key, may also be passed via env: SENDGRID_API_KEY | `false` |  |
 <!-- action-docs-inputs -->
 
 <!-- action-docs-outputs -->

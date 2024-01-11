@@ -16,6 +16,12 @@ inputs:
   body_html:
     description: "The body of the email in HTML format"
     required: false
+  attachment: 
+    description: "A file path to attach to the email"
+    required: false
+  attachments:
+    description: "A YAML list/JSON array of file paths to attach to the email"
+    required: false
   sendgrid_api_key:
     description: "The Sendgrid API key, may also be passed via env: SENDGRID_API_KEY"
     required: false
