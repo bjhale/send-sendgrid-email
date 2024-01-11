@@ -69,6 +69,8 @@ try {
         }
     }
 
+    console.log(message);
+
     const response = await mail.send(msg);
 
     const messageId = response[0].headers['x-message-id'];
@@ -77,6 +79,6 @@ try {
     core.setOutput('message_id', messageId);
 
 } catch (error) {
-    core.setFailed(error.message);
+    core.setFailed("error sending message:", error.message);
 }
 

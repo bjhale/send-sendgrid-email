@@ -45552,6 +45552,8 @@ try {
         }
     }
 
+    console.log(message);
+
     const response = await _sendgrid_mail__WEBPACK_IMPORTED_MODULE_0__.send(msg);
 
     const messageId = response[0].headers['x-message-id'];
@@ -45560,7 +45562,7 @@ try {
     _actions_core__WEBPACK_IMPORTED_MODULE_1__.setOutput('message_id', messageId);
 
 } catch (error) {
-    _actions_core__WEBPACK_IMPORTED_MODULE_1__.setFailed(error.message);
+    _actions_core__WEBPACK_IMPORTED_MODULE_1__.setFailed("error sending message:", error.message);
 }
 
 
