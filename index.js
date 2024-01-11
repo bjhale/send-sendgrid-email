@@ -9,8 +9,8 @@ const from = core.getInput('from', { required: true });
 const to = core.getInput('to', { required: true });
 const subject = core.getInput('subject', { required: true });
 
-const bodyText = core.getInput('body_text') || (core.getInput('body_text_file') ? fs.readFileSync(core.getInput('body_text_file')) : null);
-const bodyHtml = core.getInput('body_html') || (core.getInput('body_html_file') ? fs.readFileSync(core.getInput('body_html_file')) : null);
+const bodyText = core.getInput('body_text') || (core.getInput('body_text_file') ? fs.readFileSync(core.getInput('body_text_file')).toString() : null);
+const bodyHtml = core.getInput('body_html') || (core.getInput('body_html_file') ? fs.readFileSync(core.getInput('body_html_file')).toString() : null);
 
 if (!bodyText && !bodyHtml) {
     core.setFailed('At least one of body_text or body_html must be provided');
