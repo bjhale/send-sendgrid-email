@@ -19,11 +19,16 @@ if (!bodyText && !bodyHtml) {
 
 // Accumulate attachments from inputs
 let attachmentsAccumulator = [];
-for( const attachment of yaml.parse(core.getInput('attachments'))) {
-    attachmentsAccumulator.push(attachment);
+if(core.getInput('attachments')) {
+    for( const attachment of yaml.parse(core.getInput('attachments'))) {
+        attachmentsAccumulator.push(attachment);
+    }
 }
-attachmentsAccumulator.push(core.getInput('attachment'));
-const attachments = attachmentsAccumulator.filter(a => a);
+if(core.getInput('attachment')){
+    attachmentsAccumulator.push(core.getInput('attachment'));
+}
+
+const attachments = attachmentsAccumulator;
 
 const sendgridApiKey = core.getInput('sendgrid_api_key') || process.env.SENDGRID_API_KEY
 

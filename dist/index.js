@@ -45502,11 +45502,16 @@ if (!bodyText && !bodyHtml) {
 
 // Accumulate attachments from inputs
 let attachmentsAccumulator = [];
-for( const attachment of yaml__WEBPACK_IMPORTED_MODULE_2__.parse(_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('attachments'))) {
-    attachmentsAccumulator.push(attachment);
+if(_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('attachments')) {
+    for( const attachment of yaml__WEBPACK_IMPORTED_MODULE_2__.parse(_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('attachments'))) {
+        attachmentsAccumulator.push(attachment);
+    }
 }
-attachmentsAccumulator.push(_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('attachment'));
-const attachments = attachmentsAccumulator.filter(a => a);
+if(_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('attachment')){
+    attachmentsAccumulator.push(_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('attachment'));
+}
+
+const attachments = attachmentsAccumulator;
 
 const sendgridApiKey = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('sendgrid_api_key') || process.env.SENDGRID_API_KEY
 
