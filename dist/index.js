@@ -45552,7 +45552,7 @@ try {
         }
     }
 
-    console.log(message);
+    console.log(msg);
 
     const response = await _sendgrid_mail__WEBPACK_IMPORTED_MODULE_0__.send(msg);
 

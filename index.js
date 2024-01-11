@@ -69,7 +69,7 @@ try {
         }
     }
 
-    console.log(message);
+    console.log(msg);
 
     const response = await mail.send(msg);
 
