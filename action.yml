@@ -25,7 +25,7 @@ inputs:
   body_text:
     description: "The body of the email in text format"
     required: false
-  body_test_file:
+  body_text_file:
     description: "A file path to the body of the email in text format"
     required: false
   body_html:

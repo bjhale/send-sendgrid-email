@@ -18,7 +18,7 @@ Send an email using Sendgrid
 | cc | The email address of the CC recipient(s), comma delimited | `false` |  |
 | subject | The subject of the email | `true` |  |
 | body_text | The body of the email in text format | `false` |  |
-| body_test_file | A file path to the body of the email in text format | `false` |  |
+| body_text_file | A file path to the body of the email in text format | `false` |  |
 | body_html | The body of the email in HTML format | `false` |  |
 | body_html_file | A file path to the body of the email in HTML format | `false` |  |
 | attachment | A file path to attach to the email | `false` |  |
