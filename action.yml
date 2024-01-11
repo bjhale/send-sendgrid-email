@@ -4,17 +4,35 @@ inputs:
   from:
     description: "The email address of the sender"
     required: true
+  from_name:
+    description: "The name of the sender"
+    required: false
+  reply_to:
+    description: "The email address to reply to"
+    required: false
+  reply_to_name:
+    description: "The name to reply to"
+    required: false
   to:
-    description: "The email address of the recipient"
+    description: "The email address of the recipient(s), comma delimited"
     required: true
+  cc:
+    description: "The email address of the CC recipient(s), comma delimited"
+    required: false
   subject:
     description: "The subject of the email"
     required: true
   body_text:
     description: "The body of the email in text format"
     required: false
+  body_test_file:
+    description: "A file path to the body of the email in text format"
+    required: false
   body_html:
     description: "The body of the email in HTML format"
+    required: false
+  body_html_file:
+    description: "A file path to the body of the email in HTML format"
     required: false
   attachment: 
     description: "A file path to attach to the email"

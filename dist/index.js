@@ -45491,8 +45491,9 @@ __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 const from = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('from', { required: true });
 const to = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('to', { required: true });
 const subject = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('subject', { required: true });
-const bodyText = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_text') || null;
-const bodyHtml = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_html') || null;
+
+const bodyText = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_text') || (_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_text_file') ? fs__WEBPACK_IMPORTED_MODULE_3__.readFileSync(_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_text_file')) : null);
+const bodyHtml = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_html') || (_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_html_file') ? fs__WEBPACK_IMPORTED_MODULE_3__.readFileSync(_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_html_file')) : null);
 
 if (!bodyText && !bodyHtml) {
     _actions_core__WEBPACK_IMPORTED_MODULE_1__.setFailed('At least one of body_text or body_html must be provided');
