@@ -45489,7 +45489,7 @@ __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 
 
 const from = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('from', { required: true });
-const to = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('to', { required: true });
+const to = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('to', { required: true }).split(',').map((s) => s.trim());
 const subject = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('subject', { required: true });
 
 const bodyText = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_text') || (_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_text_file') ? fs__WEBPACK_IMPORTED_MODULE_3__.readFileSync(_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('body_text_file')).toString() : null);

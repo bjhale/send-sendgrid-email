@@ -6,7 +6,7 @@ import path from 'path';
 import mime from 'mime';
 
 const from = core.getInput('from', { required: true });
-const to = core.getInput('to', { required: true });
+const to = core.getInput('to', { required: true }).split(',').map((s) => s.trim());
 const subject = core.getInput('subject', { required: true });
 
 const bodyText = core.getInput('body_text') || (core.getInput('body_text_file') ? fs.readFileSync(core.getInput('body_text_file')).toString() : null);
